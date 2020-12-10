@@ -1,0 +1,69 @@
+// Esssas são minhas
+$in-dark:       #ABABAB;
+$in-white:      #595959;
+
+$linear-dark:     linear-gradient(90deg,  #020C0E 0%, #022228 100%);
+$linear-primary:  linear-gradient(90deg, #4DC4DB 0%, #209DB5 40%, #1B6E7D 100%);
+
+$linear-invert-primary:  linear-gradient(270deg, #4DC4DB 0%, #209DB5 40%, #1B6E7D 100%);
+
+
+// Variáveis do Bootstrap
+
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
+
+$primary:       #209DB5;
+// $secondary:     $gray-600 !default;
+// $success:       $green !default;
+// $info:          $cyan !default;
+// $warning:       $yellow !default;
+// $danger:        $red !default;
+$light:         #CCE5EA;
+$dark:          #020C0E;
+
+
+
+
+$theme-colors: ();
+$theme-colors: map-merge(
+  (
+    "primary":    $primary,
+    // "secondary":  $secondary,
+    // "success":    $success,
+    // "info":       $info,
+    // "warning":    $warning,
+    // "danger":     $danger,
+    "light":      $light,
+    "dark":       $dark,
+    "in-dark":    $in-dark,
+    "in-white":   $in-white,
+  ),
+  $theme-colors
+);
+
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 600px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+$container-max-widths: (
+  sm: 576px,
+  md: 720px,
+  lg: 960px,
+  xl: 1152px
+);

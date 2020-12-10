@@ -1,0 +1,13 @@
+@import "../../../../styles/utilities";
+
+#top {
+  min-height: 100vh;
+
+  .logo {
+
+    max-width: 128px;
+
+    @media (min-width: map-get($map: $grid-breakpoints, $key: md)) { max-width: 208px; }
+    @media (min-width: map-get($map: $grid-breakpoints, $key: lg)) { max-width: 256px; }
+  }
+}
