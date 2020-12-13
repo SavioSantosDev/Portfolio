@@ -6,16 +6,50 @@
   background: $primary;
 }
 
+$responsive-font-size: clamp(12px, 1.8vw, 16px);
 
 body {
-  background-image: $linear-dark;
-  font-size: clamp(12px, 1.8vw, 16px);
+  background-image: url('./assets/images/dots-bg.png'), $linear-dark;
+  font-size: $responsive-font-size;
 }
 
 h1 {
   font-weight: normal;
 }
 
+p {
+  line-height: clamp(12px * 1.5, 1.8vw * 1.5, 16px * 1.5);
+}
+
+section { margin-bottom: 4rem; }
+
+svg { fill: currentColor; }
+
+img, source { width: 100%; }
+
+
+.section-title {
+
+  // Dois filhos: Um before e outro o título, h2 provavelmente
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  // Linha no topo
+  ::before {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 4px;
+    margin: 0 auto 1rem auto;
+    background-image: $linear-primary;
+  }
+}
+
+
+.btn { font-size: $responsive-font-size; }
 
 .btn-primary {
   // background-image: $linear-primary;
