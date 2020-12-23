@@ -2,11 +2,6 @@
 $in-dark:       #ABABAB;
 $in-white:      #595959;
 
-$linear-dark:     linear-gradient(90deg,  #020C0E 0%, #022228 100%);
-$linear-primary:  linear-gradient(90deg, #4DC4DB 0%, #209DB5 40%, #1B6E7D 100%);
-
-$linear-invert-primary:  linear-gradient(270deg, #4DC4DB 0%, #209DB5 40%, #1B6E7D 100%);
-
 
 // Variáveis do Bootstrap
 
@@ -31,8 +26,6 @@ $primary:       #209DB5;
 // $danger:        $red !default;
 $light:         #CCE5EA;
 $dark:          #020C0E;
-
-
 
 
 $theme-colors: ();

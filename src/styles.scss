@@ -2,14 +2,12 @@
 
 
 ::selection {
-  color: white;
-  background: $primary;
+  color: $dark;;
+  background: $white;
 }
 
-$responsive-font-size: clamp(12px, 1.8vw, 16px);
 
 body {
-  background-image: url('./assets/images/dots-bg.png'), $linear-dark;
   font-size: $responsive-font-size;
 }
 
@@ -21,11 +19,18 @@ p {
   line-height: clamp(12px * 1.5, 1.8vw * 1.5, 16px * 1.5);
 }
 
-section { margin-bottom: 4rem; }
-
 svg { fill: currentColor; }
 
-img, source { width: 100%; }
+img { width: 100%; }
+
+
+
+.subtitle {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: $primary;
+}
 
 
 .section-title {
@@ -48,38 +53,11 @@ img, source { width: 100%; }
   }
 }
 
+$shadow-white-lg: drop-shadow(0px 0px 4px #FFFFFF) drop-shadow(0px 0px 16px rgba(255, 255, 255, 0.8));
+$shadow-primary-lg: drop-shadow(0px 0px 4px $primary) drop-shadow(0px 0px 16px rgba($primary, 0.8)) drop-shadow(0px 0px 24px rgba($primary, 0.5));
 
-.btn { font-size: $responsive-font-size; }
+$shadow-white-sm: drop-shadow(0px 0px 16px rgba(255, 255, 255, 0.5));
+$shadow-primary-sm: drop-shadow(0px 0px 4px #209DB5) drop-shadow(0px 0px 16px rgba($primary, 0.8));
 
-.btn-primary {
-  // background-image: $linear-primary;
-  max-width: 216px;
-  transition: .2s;
-
-  &:hover {
-    background-image: $linear-primary;
-    box-shadow: 0px 0px 16px rgba($primary, 0.6),
-                0px 0px 4px  rgba($primary, 0.8);
-  }
-
-  &:active {
-    background-image: $linear-invert-primary;
-  }
-}
-
-.btn-outline-primary {
-  // background-image: $linear-primary;
-  max-width: 216px;
-  transition: .2s;
-  color: white;
-
-  &:hover {
-    background-image: $linear-primary;
-    box-shadow: 0px 0px 16px rgba($primary, 0.6),
-                0px 0px 4px  rgba($primary, 0.8);
-  }
-
-  &:active {
-    background-image: $linear-invert-primary;
-  }
-}
+.btn-primary:hover , .btn-outline-primary:hover { filter: $shadow-primary-lg; }
+.btn-primary:active , .btn-outline-primary:active { filter: $shadow-primary-sm; }

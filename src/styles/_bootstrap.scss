@@ -1,30 +1,5 @@
 @import "./utilities";
 
-
-$font-family-sans-serif:      'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
-$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
-$font-family-base:            $font-family-sans-serif !default;
-
-$font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
-$line-height-base:            1;
-
-$h1-font-size:               clamp(32px, 6.4vw, 64px);
-$h2-font-size:               clamp(22px, 3.7vw, 36px);
-$h3-font-size:               clamp(16px, 2.6vw, 24px);
-// $h4-font-size:                $font-size-base * 1.5 !default;
-// $h5-font-size:                $font-size-base * 1.25 !default;
-// $h6-font-size:                $font-size-base !default;
-
-
-
-$headings-margin-bottom:      1rem;
-$headings-font-family:        'Lora', serif;
-$headings-font-weight:        700;
-$headings-line-height:        1;
-
-$small-font-size:             clamp(10px, 1.9vw, 12px);
-
-
 $spacer: 1rem !default;
 $spacers: ();
 $spacers: map-merge(
@@ -43,6 +18,10 @@ $spacers: map-merge(
 );
 
 
+// Body
+//
+// Settings for the `<body>` element.
+
 $body-bg:                   $dark;
 $body-color:                $white;
 
@@ -51,64 +30,117 @@ $body-color:                $white;
 //
 // Style anchor elements.
 
-$link-color:                              $white;
-$link-hover-color:                        darken($link-color, 15%) !default;
+$link-color:                              white;
+// $link-decoration:                         none !default;
+$link-hover-color:                        $primary;
 $link-hover-decoration:                   underline !default;
 // Darken percentage for links with `.text-*` class (e.g. `.text-success`)
-// $emphasized-link-hover-darken-percentage: 15% !default;
 $emphasized-link-hover-darken-percentage: 0;
 
 
-// Paragraphs
-//
-// Style p element.
-
-// $paragraph-margin-bottom:   1rem !default;
-
-
-// Grid columns
-//
-// Set the number of columns and specify the width of the gutters.
-
-$grid-columns:                12 !default;
-$grid-gutter-width:           32px;
+$font-family-sans-serif:      'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base:            $font-family-sans-serif !default;
 
 
 
-// Buttons + Forms
-//
-// Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
+// Essas são minhas
+$responsive-font-size: clamp(12px, 1.8vw, 16px);
+$responsive-font-size-sm: clamp(10px, 1.6vw, 14px);
+$responsive-font-size-lg: clamp(14px, 2.1vw, 20px);
 
-$input-btn-padding-y:         1rem;
-$input-btn-padding-x:         2rem;
-// $input-btn-line-height:       $line-height-base !default;
+
+$font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
+$line-height-base:            1;
+
+$h1-font-size:               clamp(32px, 6.4vw, 64px);
+$h2-font-size:               clamp(22px, 3.7vw, 36px);
+$h3-font-size:               clamp(16px, 2.6vw, 24px);
+// $h4-font-size:                $font-size-base * 1.5 !default;
+// $h5-font-size:                $font-size-base * 1.25 !default;
+// $h6-font-size:                $font-size-base !default;
+
+
+
+$headings-margin-bottom:      1rem;
+$headings-font-family:        'Lora', serif;
+$headings-font-weight:        700;
+$headings-line-height:        1;
+
+$small-font-size:             12px;
+
 
 
 // Buttons
 //
 // For each of Bootstrap's buttons, define text, background, and border color.
 
+$btn-padding-y:               20px;
+$btn-padding-x:               32px;
+$btn-font-size:               $responsive-font-size;
+$btn-line-height:             $responsive-font-size;
+
+$btn-padding-y-sm:            16px;
+$btn-padding-x-sm:            24px;
+$btn-font-size-sm:            $responsive-font-size-sm;
+$btn-line-height-sm:          $responsive-font-size-sm;
+
+$btn-padding-y-lg:            24px;
+$btn-padding-x-lg:            48px;
+$btn-font-size-lg:            $responsive-font-size-lg;
+$btn-line-height-lg:          $responsive-font-size-lg;
+
+$btn-border-width:            2px;
+
 $btn-font-weight:             700;
 $btn-box-shadow:              none;
+$btn-disabled-opacity:        .2;
+
 
 $btn-border-radius:           0;
+$btn-border-radius-lg:        0;
+$btn-border-radius-sm:        0;
+
+$btn-transition:              .2s;
+
+
 
 // Forms
 
-// $label-margin-bottom:                   .5rem !default;
+$input-padding-y:                       8px;
+$input-padding-x:                       0;
+$input-font-size:                       $responsive-font-size;
+// $input-font-weight:                     $font-weight-base !default;
+$input-line-height:                     $responsive-font-size * 1.5;
 
+$input-bg:                              transparent;
+$input-disabled-bg:                     transparent;
 
-
-$input-color:                           $dark;
-$input-border-color:                    $in-white;
+$input-color:                           $in-dark;
+$input-border-color:                    $in-dark;
+$input-border-width:                    1px;
 $input-box-shadow:                      none;
 
 $input-border-radius:                   0;
 
-$input-placeholder-color:               $in-white;
+// $input-focus-bg:                        $input-bg !default;
+$input-focus-border-color:              white;
+$input-focus-color:                     white;
+$input-focus-width:                     2px;
+$input-focus-box-shadow:                $input-btn-focus-box-shadow !default;
 
-$form-group-margin-bottom:              2rem ;
+$input-placeholder-color:               $in-dark;
+// $input-plaintext-color:                 $body-color !default;
 
+// $input-height-border:                   $input-border-width * 2 !default;
+
+$input-transition:                      .2s;
+
+$form-text-margin-top:                  0;
+
+
+$form-grid-gutter-width:                16px;
+$form-group-margin-bottom:              32px;
 
 // Form validation
 
@@ -138,50 +170,45 @@ $form-group-margin-bottom:              2rem ;
 // );
 
 
-// Navs
-
-// $nav-link-padding-y:                .5rem !default;
-// $nav-link-padding-x:                1rem !default;
-// $nav-link-disabled-color:           $gray-600 !default;
-
-// $nav-tabs-border-color:             $gray-300 !default;
-// $nav-tabs-border-width:             $border-width !default;
-// $nav-tabs-border-radius:            $border-radius !default;
-// $nav-tabs-link-hover-border-color:  $gray-200 $gray-200 $nav-tabs-border-color !default;
-// $nav-tabs-link-active-color:        $gray-700 !default;
-// $nav-tabs-link-active-bg:           $body-bg !default;
-// $nav-tabs-link-active-border-color: $gray-300 $gray-300 $nav-tabs-link-active-bg !default;
-
-// $nav-pills-border-radius:           $border-radius !default;
-// $nav-pills-link-active-color:       $component-active-color !default;
-// $nav-pills-link-active-bg:          $component-active-bg !default;
-
-// $nav-divider-color:                 $gray-200 !default;
-// $nav-divider-margin-y:              $spacer / 2 !default;
-
+$nav-link-padding-y:                2rem;
 
 // Navbar
 
-$navbar-padding-y:                  24px;
+$navbar-padding-y:                  0;
 // $navbar-padding-x:                  $spacer !default;
 
-$navbar-nav-link-padding-x:         .5rem !default;
+// $navbar-nav-link-padding-x:         .5rem !default;
 
+// $navbar-brand-font-size:            $font-size-lg !default;
+// $nav-link-height:                   $font-size-base * $line-height-base + $nav-link-padding-y * 2 !default;
+// $navbar-brand-height:               $navbar-brand-font-size * $line-height-base !default;
 $navbar-brand-padding-y:            0;
 
 // $navbar-toggler-padding-y:          .25rem !default;
 // $navbar-toggler-padding-x:          .75rem !default;
 // $navbar-toggler-font-size:          $font-size-lg !default;
-// $navbar-toggler-border-radius:      .5rem;
+// $navbar-toggler-border-radius:      $btn-border-radius !default;
 
-$navbar-dark-color:                 $white;
-$navbar-dark-hover-color:           rgba($navbar-dark-color, .75);
-$navbar-dark-active-color:          $primary;
-// $navbar-dark-disabled-color:        rgba($white, .25) !default;
-$navbar-dark-toggler-icon-bg:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><path stroke='#{$primary}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
-$navbar-dark-toggler-border-color:  $primary;
+$navbar-dark-color:                 white;
+$navbar-dark-hover-color:           $primary;
+// $navbar-dark-active-color:          $white !default;
+$navbar-dark-disabled-color:        rgba($white, .2);
+// $navbar-dark-toggler-icon-bg:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><path stroke='#{$navbar-dark-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !default;
+$navbar-dark-toggler-border-color:  transparent;
 
+// $navbar-light-color:                rgba($black, .5) !default;
+// $navbar-light-hover-color:          rgba($black, .7) !default;
+// $navbar-light-active-color:         rgba($black, .9) !default;
+// $navbar-light-disabled-color:       rgba($black, .3) !default;
+// $navbar-light-toggler-icon-bg:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><path stroke='#{$navbar-light-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !default;
+// $navbar-light-toggler-border-color: rgba($black, .1) !default;
+
+$navbar-light-brand-color:                $primary;
+$navbar-light-brand-hover-color:          $primary;
+// $navbar-dark-brand-color:                 $navbar-dark-active-color !default;
+// $navbar-dark-brand-hover-color:           $navbar-dark-active-color !default;
 
 
 
 @import "~bootstrap/scss/bootstrap";
+
