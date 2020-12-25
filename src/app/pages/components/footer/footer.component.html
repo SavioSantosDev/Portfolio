@@ -1,1 +1,64 @@
-<p>footer works!</p>
+<footer id="main-footer" class="border-top border-white">
+
+  <!-- Menu, Contato e Redes sociais -->
+  <div class="container py-6">
+    <!-- Menu visivel apenas no lg. Contato e social alinhado verticalmente, e horizontalmente a partir do md -->
+    <div class="row justify-content-center">
+      <div class="col-auto col-md-12  row flex-column flex-md-row justify-content-between">
+
+        <!-- Menu de navegação. Só para Desktop -->
+        <div class="col-auto d-none d-lg-block">
+          <h4 class="mb-6">NAVEGAÇÃO</h4>
+          <ul class="nav flex-column">
+            <!-- Home -->
+            <li class="nav-item mb-5">
+              <a class="nav-link py-1" [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+            </li>
+
+            <!-- Cases -->
+            <li class="nav-item mb-5">
+              <a class="nav-link py-1" [routerLink]="['/cases']" routerLinkActive="active" >Cases</a>
+            </li>
+
+            <!-- Contato -->
+            <li class="nav-item">
+              <a class="nav-link py-1" [routerLink]="['/contato']" routerLinkActive="active" >Contato</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Informações para contato. -->
+        <div class="mb-7 mb-md-0  col-auto">
+          <h4 class="mb-5 mb-md-6 text-center text-md-left">CONTATO</h4>
+          <address class="d-flex align-items-center mb-5">
+            <button type="button" class="icon-circle i-white mr-3"><svg><use xlink:href="#i-envelope"/></svg></button>
+            <span>saviosantosdev@gmail.com</span>
+          </address>
+          <address class="d-flex align-items-center m-0">
+            <button type="button" class="icon-circle i-white mr-3"><svg><use xlink:href="#i-whatsapp"/></svg></button>
+            <span>(77) 99147-6770</span>
+          </address>
+        </div>
+
+        <!-- Redes sociais -->
+        <div class="col-auto">
+          <h4 class="mb-5 mb-md-6 text-center text-md-left">SOCIAL</h4>
+          <div class="d-flex justify-content-center">
+            <a class="icon-circle i-white mr-5"><svg><use xlink:href="#i-github"/></svg></a>
+            <a class="icon-circle i-white mr-5"><svg><use xlink:href="#i-linkedin"/></svg></a>
+            <a class="icon-circle i-white"><svg><use xlink:href="#i-instagram"/></svg></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="copyright py-5 py-md-6 text-center">
+    <div class="container">
+      <svg width="32" height="32" class="d-block mx-auto mb-5"><use xlink:href="#i-logo"/></svg>
+      <small>&copy; 2020 - Todos os direitos reservados a Antonio Sávio</small>
+    </div>
+  </div>
+
+</footer>

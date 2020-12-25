@@ -1,8 +1,8 @@
-@import "./styles/bootstrap";
-
+@import "./styles/bootstrap/bootstrap.scss";
+@import "./styles/utilities";
 
 ::selection {
-  color: $dark;;
+  color: $color-dark;;
   background: $white;
 }
 
@@ -24,40 +24,64 @@ svg { fill: currentColor; }
 img { width: 100%; }
 
 
-
-.subtitle {
-  font-weight: bold;
+// Vai ser servir de subtitle
+h4, .h4 {
+  font-family: 'Montserrat';
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: $primary;
+  color: $color-primary;
 }
 
 
-.section-title {
+// Sobrescrevendo as propriedades de algumas classes do bootstrap
+.btn {
+  padding: 12px 24px;
 
-  // Dois filhos: Um before e outro o título, h2 provavelmente
+  @media (min-width: $bp-md) { padding: 16px 28px; }
+  @media (min-width: $bp-lg) { padding: 20px 32px; }
+}
+.btn-outline-primary { color: white; }
 
+
+.btn-icon {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
 
-  // Linha no topo
-  ::before {
-    content: '';
-    display: block;
-    width: 50%;
-    height: 4px;
-    margin: 0 auto 1rem auto;
-    background-image: $linear-primary;
+  svg {
+    margin-right: .5rem;
+    width: $responsive-font-size;
+    height: $responsive-font-size;
   }
 }
 
-$shadow-white-lg: drop-shadow(0px 0px 4px #FFFFFF) drop-shadow(0px 0px 16px rgba(255, 255, 255, 0.8));
-$shadow-primary-lg: drop-shadow(0px 0px 4px $primary) drop-shadow(0px 0px 16px rgba($primary, 0.8)) drop-shadow(0px 0px 24px rgba($primary, 0.5));
+.icon-circle {
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  border: 0;
+  background: transparent;
 
-$shadow-white-sm: drop-shadow(0px 0px 16px rgba(255, 255, 255, 0.5));
-$shadow-primary-sm: drop-shadow(0px 0px 4px #209DB5) drop-shadow(0px 0px 16px rgba($primary, 0.8));
+  svg {
+    width: 60%;
+    height: 60%;
+  }
 
-.btn-primary:hover , .btn-outline-primary:hover { filter: $shadow-primary-lg; }
-.btn-primary:active , .btn-outline-primary:active { filter: $shadow-primary-sm; }
+  &.i-white {
+    background-color: white;
+    color: $color-dark;
+
+    &:hover { @include my-shadow(white, true); }
+  }
+
+  &.i-primary {
+    background-color: $color-primary;
+    color: white;
+
+    &:hover { @include my-shadow($primary, true); }
+  }
+}

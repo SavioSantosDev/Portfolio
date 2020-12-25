@@ -1,1 +1,95 @@
+<section id="home" class="min-vh-100 d-flex align-items-center   py-8">
+  <div class="container">
 
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-8">
+
+        <div class="content   mb-6 text-center">
+          <strong>Sávio Santos</strong>
+          <div class="division  my-5"></div>
+          <p class="text-in-dark">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Vestibulum consectetur dui sem, eget ullamcorper purus rhoncus ac consectetur adipiscing elit.
+          </p>
+        </div>
+
+        <div class="d-flex justify-content-center align-items-center flex-column flex-sm-row">
+          <button class="btn btn-white  mb-5 mb-sm-0 mr-sm-5">
+            Visualizar projetos
+          </button>
+          <button class="btn btn-outline-white">
+            Entre me contato
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="recent-cases" class="d-flex align-items-center   py-8">
+  <div class="container">
+
+    <div class="mb-7 text-center">
+      <h4>Cases</h4>
+      <h2>Trabalhos recentes</h2>
+    </div>
+
+    <div class="row justify-content-center mb-7">
+
+      <!-- Encapsular em uma div para que figure não tenha padding -->
+      <div class="col-12 col-lg-6 mb-6 mb-lg-0">
+        <figure class="d-flex justify-content-center">
+          <img src="../../../assets/images/cases/Portfolio.png" alt="Meu portfólio">
+          <figcaption class="p-3 p-md-5 text-center">
+            <h3>Meu Portfólio</h3>
+            <div class="row justify-content-center">
+              <div class="col-auto my-2 my-md-3">
+                <a class="btn btn-primary btn-icon" [routerLink]="'/cases'">
+                  <svg><use xlink:href="#i-global"/></svg><span>Acessar case</span>
+                </a>
+              </div>
+              <div class="col-auto my-2 my-md-3">
+                <a class="btn btn-outline-primary  btn-icon" [routerLink]="'/cases'">
+                  <svg><use xlink:href="#i-details"/></svg><span>Ver detalhes</span>
+                </a>
+              </div>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="col-12 col-lg-6 mb-6 mb-lg-0 mt-0 mt-lg-6">
+        <figure class="d-flex justify-content-center">
+          <img src="../../../assets/images/cases/OrbitApp.png" alt="Orbit App">
+          <figcaption class="p-3 p-md-5 text-center">
+            <h3>Orbit App</h3>
+            <div class="row justify-content-center">
+              <div class="col-auto my-2 my-md-3">
+                <a class="btn btn-primary btn-icon" [routerLink]="'/cases'">
+                  <svg><use xlink:href="#i-global"/></svg><span>Acessar case</span>
+                </a>
+              </div>
+              <div class="col-auto my-2 my-md-3">
+                <a class="btn btn-outline-primary  btn-icon" [routerLink]="'/cases'">
+                  <svg><use xlink:href="#i-details"/></svg><span>Ver detalhes</span>
+                </a>
+              </div>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
+
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <a class="btn btn-primary" [routerLink]="'/cases'">
+        <div class="btn-icon">
+          <span>Ver tudo</span><svg class="mr-0 ml-2"><use xlink:href="#i-arrow"/></svg>
+        </div>
+      </a>
+    </div>
+
+  </div>
+</section>

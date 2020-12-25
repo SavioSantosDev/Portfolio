@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
+
 import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
@@ -11,7 +14,9 @@ import { NavbarComponent } from './navbar/navbar.component';
     NavbarComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule,
+    CollapseModule.forRoot(),
   ],
   exports: [
     FooterComponent,

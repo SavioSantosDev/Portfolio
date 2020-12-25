@@ -1,0 +1,13 @@
+@import "../../../../styles/utilities";
+
+#main-footer {
+
+  .active {
+    font-weight: bold;
+    color: $color-primary;
+  }
+
+  .copyright {
+    background-color: lighten($color: $color-dark, $amount: 1%);
+  }
+}

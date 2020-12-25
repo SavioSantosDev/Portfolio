@@ -1,0 +1,52 @@
+@import "../../../styles/utilities";
+
+#home {
+
+  background-image: url('../../../assets/images/montains.svg'), url('../../../assets/images/night-sky.svg');
+  background-position: bottom, center;
+  background-size: contain, cover;
+  background-repeat: no-repeat, no-repeat;
+//   background-attachment: scroll, fixed;
+
+  .content strong {
+    font-size: clamp(48px, 8.3vw, 72px);
+    font-family: 'Lora';
+    line-height: 110%;
+    font-weight: normal;
+  }
+
+  .division {
+    width: 25%;
+    height: 4px;
+    background-color: white;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+}
+
+#recent-cases {
+
+  figure {
+    position: relative;
+
+    img { max-width: 544px; object-fit: contain; }
+
+    figcaption {
+      opacity: 0;
+      backdrop-filter: blur(4px);
+      background-color: rgba($color: $color-dark, $alpha: .8);
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transition: .2s;
+
+      @media (prefers-reduced-motion: reduce) { transition: 0; }
+    }
+
+    &:hover figcaption { opacity: 1; }
+  }
+
+}
+
