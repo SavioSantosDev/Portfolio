@@ -10,7 +10,7 @@
     color: $color-primary;
     transition: .2s;
 
-    &:hover { @include my-shadow($color-primary, true); }
+    &:hover { @include apply-shadow($color-primary, 'lg'); }
   }
 
   .navbar-toggler:active {

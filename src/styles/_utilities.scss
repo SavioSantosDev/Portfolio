@@ -30,13 +30,23 @@ $color-in-dark:       #ABABAB;
 $color-in-white:      #595959;
 
 
-// Sombras - Arrumar isso aqui.
+/**
+ * Cor, Tamanho da sombra (blur), e a propriedade que será utlizar, filter ou box-shadow
+ */
+@mixin apply-shadow($color, $size: 'sm', $property: 'filter') {
+  @if $property == 'filter' {
+    @if $size == 'lg' {
+      filter: drop-shadow(0px 0px 4px $color) drop-shadow(0px 0px 8px rgba($color, 0.8));
+    } @else if $size =='sm' {
+      filter: drop-shadow(0px 0px 4px $color);
+    }
 
-@mixin my-shadow($color, $shadow-lg) {
-  @if $shadow-lg {
-    filter: drop-shadow(0px 0px 4px $color) drop-shadow(0px 0px 8px rgba($color, 0.8));
-  } @else {
-    filter: drop-shadow(0px 0px 4px $color);
+  } @else if $property == 'box-shadow' {
+    @if $size == 'lg' {
+      box-shadow: 0 0 4px $color, 0 0 8px rgba($color, .8);
+    } @else if $size =='sm' {
+      box-shadow: 0 0 4px $color;
+    }
   }
 }
 

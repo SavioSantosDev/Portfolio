@@ -1,0 +1,94 @@
+@import "../../../styles/utilities";
+
+// Variável do Bootstrap, só peguei e colei
+// Characters which are escaped by the escape-svg function
+$escaped-characters: (
+  ("<", "%3c"),
+  (">", "%3e"),
+  ("#", "%23"),
+  ("(", "%28"),
+  (")", "%29"),
+) !default;
+
+@import "~bootstrap/scss/functions";
+
+#contact {
+
+  background-image: url('../../../assets/images/blue-sky.jpg');
+  background-size: cover;
+  background-position: center;
+
+  form {
+    background-color: rgba($color: $color-dark, $alpha: .8);
+  }
+}
+
+.control-wrapper {
+  margin-bottom: 2rem;
+  position: relative;
+
+  .control {
+
+    outline: none;
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    background-color: transparent;
+    background-clip: padding-box;
+    border: none;
+    border-bottom: 1px solid $color-in-dark;
+    border-radius: 0;
+    color: white;
+    font-weight: normal;
+
+    // Gambiarra para atrazar os estilos do autocomplete do chrome
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      -webkit-transition-delay: 9999s;
+      -webkit-transition: color 9999s ease-out,
+      background-color 9999s ease-out;
+    }
+
+    &::placeholder {
+      color: $color-in-dark;
+      opacity: 1;
+    }
+
+    &:focus {
+      border-color: white;
+
+      &.ng-untouched { @include apply-shadow(white, $property: 'box-shadow'); }
+      &.ng-touched.ng-valid { @include apply-shadow($color-success, $property: 'box-shadow'); }
+      &.ng-touched.ng-invalid { @include apply-shadow($color-danger, $property: 'box-shadow'); }
+    }
+
+    $i-error: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><path fill='#{$color-danger}' d='M27.4676 4.5506C27.1275 4.20975 26.6658 4.0182 26.1843 4.0182C25.7028 4.0182 25.2411 4.20975 24.901 4.5506L16 13.4334L7.09898 4.5324C6.7589 4.19155 6.29719 4 5.8157 4C5.33421 4 4.8725 4.19155 4.53242 4.5324C3.82253 5.2423 3.82253 6.38905 4.53242 7.09895L13.4334 16L4.53242 24.901C3.82253 25.6109 3.82253 26.7577 4.53242 27.4676C5.24232 28.1775 6.38908 28.1775 7.09898 27.4676L16 18.5665L24.901 27.4676C25.6109 28.1775 26.7577 28.1775 27.4676 27.4676C28.1775 26.7577 28.1775 25.6109 27.4676 24.901L18.5666 16L27.4676 7.09895C28.1593 6.40726 28.1593 5.2423 27.4676 4.5506Z'/></svg>");
+    $i-success: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><path fill='#{$color-success}' d='M9.89932 23.4529L3.22669 16.7729C2.87427 16.4158 2.39366 16.2147 1.89217 16.2147C1.39067 16.2147 0.910058 16.4158 0.557641 16.7729C-0.18588 17.5173 -0.18588 18.7006 0.557641 19.4449L8.54573 27.4417C9.28925 28.1861 10.4903 28.1861 11.2338 27.4417L31.4424 7.23019C32.1859 6.48585 32.1859 5.30255 31.4424 4.55822C31.0899 4.20103 30.6093 4 30.1078 4C29.6063 4 29.1257 4.20103 28.7733 4.55822L9.89932 23.4529Z'/></svg>");
+
+    @mixin control-validation($color, $icon) {
+      border-color: $color;
+      padding-right: 40px;
+      background-image: escape-svg($icon);
+      background-repeat: no-repeat;
+      background-size: 1rem 1rem;
+      background-position: calc(100% - 1rem) .5rem;
+    }
+
+    &.ng-touched.ng-valid {   @include control-validation($color-success, $i-success); }
+    &.ng-touched.ng-invalid { @include control-validation($color-danger, $i-error); }
+  }
+
+  .error-feedback {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    transform: translateY(.5rem);
+    color: $color-danger;
+  }
+
+} // control-wrapper

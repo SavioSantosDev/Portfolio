@@ -1,1 +1,97 @@
-<p>contact works!</p>
+<section id="contact" class="min-vh-100 d-flex align-items-center">
+  <div class="container   py-8">
+    <div class="row justify-content-center">
+      <div class="col-12 col-sm-10 col-md-8 col-xl-6">
+
+        <form [formGroup]="formulario" class="p-6 d-flex flex-column" (ngSubmit)="onSubmit()">
+          <header>
+            <h2>Entre em contato</h2>
+            <p class="text-in-dark">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consectetur dui sem, eget ullamcorper purus rhoncus ac.
+            </p>
+          </header>
+          <strong class="text-primary py-5 py-md-6">* Campos opcionais</strong>
+          <fieldset>
+
+            <!-- Nome -->
+            <div class="control-wrapper">
+              <input
+                type="text"
+                class="control"
+                id="nome"
+                formControlName="nome"
+                placeholder="Seu nome"
+              >
+              <small *ngIf="controlHasErrors(nome)" class="error-feedback">
+                <span *ngIf="nome.errors.required">Campo obrigatório!</span>
+              </small>
+            </div>
+
+            <!-- E-mail -->
+            <div class="control-wrapper">
+              <input
+                type="email"
+                class="control"
+                id="email"
+                formControlName="email"
+                placeholder="Seu email"
+              >
+              <small *ngIf="controlHasErrors(email)" class="error-feedback">
+                <span *ngIf="email.errors.required">Campo obrigatório!</span>
+                <span *ngIf="email.errors.email">E-mail inválido!</span>
+              </small>
+            </div>
+
+            <!-- Número -->
+            <div class="control-wrapper">
+              <input
+                type="tel"
+                class="control"
+                id="phone"
+                formControlName="phone"
+                placeholder="* Telefone / Celular"
+              >
+              <small *ngIf="controlHasErrors(phone)" class="error-feedback">
+                <span *ngIf="phone.errors.pattern">Formato de número incorreto!</span>
+              </small>
+            </div>
+
+            <!-- Assunto -->
+            <div class="control-wrapper">
+              <input
+                type="text"
+                class="control"
+                id="assunto"
+                formControlName="assunto"
+                placeholder="Assunto"
+                autocomplete="off"
+              >
+              <small *ngIf="controlHasErrors(assunto)" class="error-feedback">
+                <span *ngIf="assunto.errors.required">Campo obrigatório!</span>
+              </small>
+            </div>
+
+            <!-- Mensagem -->
+            <div class="control-wrapper">
+              <textarea
+                class="control"
+                id="mensagem"
+                formControlName="mensagem"
+                placeholder="Mensagem"
+                autocomplete="off"
+              ></textarea>
+              <small *ngIf="controlHasErrors(mensagem)" class="error-feedback">
+                <span *ngIf="mensagem.errors.required">Campo obrigatório!</span>
+              </small>
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]="!formulario.valid">Enviar mensagem</button>
+
+            <!-- <app-form-debug [form]="formulario"></app-form-debug> -->
+
+          </fieldset>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</section>

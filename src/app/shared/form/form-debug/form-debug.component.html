@@ -1,0 +1,11 @@
+<section class="mt-6" *ngIf="form">
+  <strong>Detalhes do formulario</strong>
+
+  <pre class="text-white">
+      Form válido: {{ form.valid }}
+  </pre>
+
+  <pre class="text-white">
+      Valores: <br>: {{ form.value | json }}
+  </pre>
+</section>
