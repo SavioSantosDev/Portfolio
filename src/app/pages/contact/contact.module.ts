@@ -9,13 +9,13 @@ import { SharedModule } from './../../shared/shared.module';
 
 @NgModule({
   declarations: [
-      ContactComponent
-      ],
+    ContactComponent
+  ],
   imports: [
     CommonModule,
     ContactRoutingModule,
     ReactiveFormsModule,
     SharedModule
-  ]
+  ],
 })
 export class ContactModule { }

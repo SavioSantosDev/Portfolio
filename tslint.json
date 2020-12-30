@@ -4,6 +4,7 @@
     "codelyzer"
   ],
   "rules": {
+    "jsdoc-format": false,
     "align": {
       "options": [
         "parameters",
