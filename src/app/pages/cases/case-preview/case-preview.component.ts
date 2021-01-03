@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+import { Case } from 'src/models/ICase';
 
 @Component({
   selector: 'app-case-preview',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CasePreviewComponent implements OnInit {
 
-  constructor() { }
+  case: Case;
+
+  constructor(
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
+    this.case = this.route.snapshot.data.case;
   }
 
 }

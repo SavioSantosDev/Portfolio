@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { tap, map } from 'rxjs/operators';
 
 import { environment } from './../../environments/environment';
 import { Case } from 'src/models/ICase';
@@ -11,7 +11,7 @@ import { Case } from 'src/models/ICase';
 })
 export class CasesService {
 
-  private readonly API = `${environment.API}cases`;
+  private cases = `assets/json/cases.json`;
 
   constructor(
     private http: HttpClient
@@ -19,7 +19,15 @@ export class CasesService {
 
 
   list(): Observable<Case[]> {
-    return this.http.get<Case[]>(this.API).pipe(
+    return this.http.get<Case[]>(this.cases).pipe(
+      tap(console.log)
+    );
+  }
+
+
+  show(name: string): Observable<Case> {
+    return this.http.get<Case[]>(`${this.cases}`).pipe(
+      map(  (cases: Case[]) => cases.filter((caseSingle: Case) => caseSingle.name === name)[0]  ),
       tap(console.log)
     );
   }

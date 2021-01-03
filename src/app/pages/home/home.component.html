@@ -28,6 +28,8 @@
   </div>
 </section>
 
+
+<!-- Cases recentes -->
 <section id="recent-cases" class="d-flex align-items-center   py-8">
   <div class="container">
 
@@ -36,22 +38,26 @@
       <h2>Trabalhos recentes</h2>
     </div>
 
-    <div class="row justify-content-center mb-7">
+    <div class="row justify-content-center mb-7" *ngIf="cases; else loading">
 
       <!-- Encapsular em uma div para que figure não tenha padding -->
-      <div class="col-12 col-lg-6 mb-6 mb-lg-0">
+      <div class="col-12 col-lg-6 mb-6 mb-lg-0   mt-0"   *ngFor="let case of cases; index as i" [class.mt-lg-6]="i % 2 !== 0">
         <figure class="d-flex justify-content-center">
-          <img src="../../../assets/images/cases/Portfolio.png" alt="Meu portfólio">
+          <!-- Imagem de exibição -->
+          <img [src]="case.banner" [alt]="case.title">
+          <!-- Informações mostradas no hover -->
           <figcaption class="p-3 p-md-5 text-center">
-            <h3>Meu Portfólio</h3>
+            <h3>{{ case.title }}</h3>
             <div class="row justify-content-center">
-              <div class="col-auto my-2 my-md-3">
-                <a class="btn btn-primary btn-icon" [routerLink]="'/cases'">
+              <!-- Botão para acessar o case -->
+              <div class="col-auto my-2 my-md-3"   *ngIf="case.website">
+                <a class="btn btn-primary btn-icon" target="_blank" [href]="case.website">
                   <svg><use xlink:href="#i-global"/></svg><span>Acessar case</span>
                 </a>
               </div>
+              <!-- Botão para ver mais detalhes do case -->
               <div class="col-auto my-2 my-md-3">
-                <a class="btn btn-outline-primary  btn-icon" [routerLink]="'/cases'">
+                <a class="btn btn-outline-primary  btn-icon" [routerLink]="['cases', case.name]">
                   <svg><use xlink:href="#i-details"/></svg><span>Ver detalhes</span>
                 </a>
               </div>
@@ -59,29 +65,11 @@
           </figcaption>
         </figure>
       </div>
-
-      <div class="col-12 col-lg-6 mb-6 mb-lg-0 mt-0 mt-lg-6">
-        <figure class="d-flex justify-content-center">
-          <img src="../../../assets/images/cases/OrbitApp.png" alt="Orbit App">
-          <figcaption class="p-3 p-md-5 text-center">
-            <h3>Orbit App</h3>
-            <div class="row justify-content-center">
-              <div class="col-auto my-2 my-md-3">
-                <a class="btn btn-primary btn-icon" [routerLink]="'/cases'">
-                  <svg><use xlink:href="#i-global"/></svg><span>Acessar case</span>
-                </a>
-              </div>
-              <div class="col-auto my-2 my-md-3">
-                <a class="btn btn-outline-primary  btn-icon" [routerLink]="'/cases'">
-                  <svg><use xlink:href="#i-details"/></svg><span>Ver detalhes</span>
-                </a>
-              </div>
-            </div>
-          </figcaption>
-        </figure>
-      </div>
-
     </div>
+
+    <ng-template #loading>
+      <h2>Carregando...</h2>
+    </ng-template>
 
     <div class="d-flex justify-content-center">
       <a class="btn btn-primary" [routerLink]="'/cases'">

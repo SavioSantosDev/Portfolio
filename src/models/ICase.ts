@@ -1,5 +1,5 @@
 export interface Case {
-  id: number;
+  name: string;
   title: string;
   genre: string;
   description: string;
@@ -7,11 +7,5 @@ export interface Case {
   website: string;
   open_source: string;
   banner: string;
-  images: Image[];
-}
-
-
-interface Image {
-  id: number;
-  path: string;
+  images: string[];
 }

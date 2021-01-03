@@ -1,75 +1,43 @@
 <!-- Meu portfólio -->
-<div class="mt-5 mb-7 mb-md-8">
-  <div class="row align-items-center justify-content-center">
+<div *ngIf="cases; else loading">
+  <div class="mt-5 mb-7 mb-md-8"   *ngFor="let case of cases">
+    <div class="row align-items-center justify-content-center">
 
-    <!-- Img -->
-    <figure class="col-12 col-sm-10 col-lg-6  mb-5 mb-md-7 mb-lg-0  order-1 order-lg-2">
-      <img src="../../../assets/images/cases/Portfolio.png" alt="Meu portfólio">
-    </figure>
+      <!-- Img -->
+      <figure class="col-12 col-sm-10 col-lg-6  mb-5 mb-md-7 mb-lg-0  order-1 order-lg-2">
+        <img src="{{ case.banner }}" alt="{{ case.title }}">
+      </figure>
 
-    <!-- Content -->
-    <div class="col-12 col-lg-6   order-2 order-lg-1">
-      <div class="mb-5 mb-md-6">
-        <header class="mb-5 mb-lg-6 text-center text-md-left">
-          <h4>Hobbie</h4>
-          <h2>Meu portfólio</h2>
-        </header>
-        <div class="d-none d-md-block">
-          <div class="border border-white w-25 mb-3"></div>
-          <p class="text-in-dark">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consectetur dui sem, eget ullamcorper purus rhoncus ac.
-            In hac habitasse platea dictumst. Curabitur venenatis vitae mi vitae euismod.
-            Nulla in ante dictum, ultricies lacus et, sollicitudin ex.
-          </p>
+      <!-- Content -->
+      <div class="col-12 col-lg-6   order-2 order-lg-1">
+        <div class="mb-5 mb-md-6">
+          <header class="mb-5 mb-lg-6 text-center text-md-left">
+            <h4>{{ case.genre }}</h4>
+            <h2>{{ case.title }}</h2>
+          </header>
+          <!-- Descrição -->
+          <div class="d-none d-md-block">
+            <div class="border border-white w-25 mb-3"></div>
+            <p class="text-in-dark">{{case.description }}</p>
+          </div>
+        </div>
+        <!-- Botões -->
+        <div class="d-flex flex-column flex-sm-row  align-items-center justify-content-center justify-content-md-start">
+          <!-- Acessar o case -->
+          <a class="btn btn-primary btn-icon  mb-3 mb-sm-0 mr-sm-5" target="_blank" *ngIf="case.website" [href]="case.website">
+            <svg><use xlink:href="#i-global"/></svg><span>Acessar case</span>
+          </a>
+          <!-- Ver detalhes -->
+          <a class="btn btn-outline-primary  btn-icon" [routerLink]="[case.name]">
+            <svg><use xlink:href="#i-details"/></svg><span>Ver detalhes</span>
+          </a>
         </div>
       </div>
-      <div class="d-flex flex-column flex-sm-row  align-items-center justify-content-center justify-content-md-start">
-        <a class="btn btn-primary btn-icon  mb-3 mb-sm-0 mr-sm-5">
-          <svg><use xlink:href="#i-global"/></svg><span>Acessar case</span>
-        </a>
-        <a class="btn btn-outline-primary  btn-icon">
-          <svg><use xlink:href="#i-details"/></svg><span>Ver detalhes</span>
-        </a>
-      </div>
-    </div>
 
+    </div>
   </div>
 </div>
 
-<!-- Orbit App -->
-<div class="mt-5 mb-7 mb-md-8">
-  <div class="row align-items-center justify-content-center">
-
-    <!-- Img -->
-    <figure class="col-12 col-sm-10 col-lg-6  mb-5 mb-md-7 mb-lg-0  order-1 order-lg-2">
-      <img src="../../../assets/images/cases/OrbitApp.png" alt="Orbit App">
-    </figure>
-
-    <!-- Content -->
-    <div class="col-12 col-lg-6   order-2 order-lg-1">
-      <div class="mb-5 mb-md-6">
-        <header class="mb-5 mb-lg-6 text-center text-md-left">
-          <h4>Landing Page</h4>
-          <h2>Orbit App</h2>
-        </header>
-        <div class="d-none d-md-block">
-          <div class="border border-white w-25 mb-3"></div>
-          <p class="text-in-dark">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consectetur dui sem, eget ullamcorper purus rhoncus ac.
-            In hac habitasse platea dictumst. Curabitur venenatis vitae mi vitae euismod.
-            Nulla in ante dictum, ultricies lacus et, sollicitudin ex.
-          </p>
-        </div>
-      </div>
-      <div class="d-flex flex-column flex-sm-row  align-items-center justify-content-center justify-content-md-start">
-        <a class="btn btn-primary btn-icon  mb-3 mb-sm-0 mr-sm-5">
-          <svg><use xlink:href="#i-global"/></svg><span>Acessar case</span>
-        </a>
-        <a class="btn btn-outline-primary  btn-icon" routerLink="teste">
-          <svg><use xlink:href="#i-details"/></svg><span>Ver detalhes</span>
-        </a>
-      </div>
-    </div>
-
-  </div>
-</div>
+<ng-template #loading>
+  <h1>Carregando...</h1>
+</ng-template>

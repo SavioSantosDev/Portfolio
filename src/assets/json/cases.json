@@ -1,0 +1,22 @@
+[
+  {
+    "name": "meu-portfolio",
+    "title": "Meu Portfólio",
+    "genre": "hobbie",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consectetur dui sem, eget ullamcorper purus rhoncus ac. In hac habitasse platea dictumst. Curabitur venenatis vitae mi vitae euismod. Nulla in ante dictum, ultricies lacus et, sollicitudin ex. Fusce nisl leo, dignissim a scelerisque nec, commodo ac sem. Phasellus sit amet tempor metus, et auctor est. Praesent auctor nisl augue, sed tempus arcu dapibus at.",
+    "website": "https://saviosantos.net/",
+    "open_source": "https://github.com/SavioSantosDev/Portfolio",
+    "banner": "http://localhost:4200/assets/images/cases/Portfolio.png",
+    "technologies": [ "angular", "sass" ]
+  },
+  {
+    "name": "orbit-app",
+    "title": "Orbit App",
+    "genre": "landing page",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consectetur dui sem, eget ullamcorper purus rhoncus ac. In hac habitasse platea dictumst. Curabitur venenatis vitae mi vitae euismod. Nulla in ante dictum, ultricies lacus et, sollicitudin ex. Fusce nisl leo, dignissim a scelerisque nec, commodo ac sem. Phasellus sit amet tempor metus, et auctor est. Praesent auctor nisl augue, sed tempus arcu dapibus at.",
+    "website": null,
+    "open_source": null,
+    "banner": "http://localhost:4200/assets/images/cases/OrbitApp.png",
+    "technologies": [ "HTML", "SASS", "JavaScript" ]
+  }
+]
