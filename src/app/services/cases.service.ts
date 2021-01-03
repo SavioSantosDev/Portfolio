@@ -11,7 +11,7 @@ import { Case } from 'src/models/ICase';
 })
 export class CasesService {
 
-  private cases = `assets/json/cases.json`;
+  private cases = environment.CASES;
 
   constructor(
     private http: HttpClient

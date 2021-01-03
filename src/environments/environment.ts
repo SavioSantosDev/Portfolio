@@ -4,8 +4,7 @@
 
 export const environment = {
   production: false,
-  // API: 'http://localhost:3333/'
-  API: 'http://localhost:4200/assets/json/'
+  CASES: 'http://localhost:4200/assets/json/cases.json'
 };
 
 /*

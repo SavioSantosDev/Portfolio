@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  API: '/'
+  CASES: 'https://saviosantos.net/assets/json/cases.prod.json'
 };
